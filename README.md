@@ -1,55 +1,36 @@
-# Renger-HackMatrix2026
-# HackMatrix 2026: Sustainable Agriculture Ecosystem
+# AgroCure AI — Frontend
 
-A next-generation smart farming solution designed to lower cultivation costs and bridge the digital literacy gap for grassroots farmers using localized intelligence.
+Web application (React + Vite + Tailwind CSS) for the Mobile UI step of the pipeline: capture a leaf photo, send it to the FastAPI Gateway for inference, show the diagnosis, and speak the advice in Hindi.
 
-## 💡 Core Pillars
+This is a **web app**, not a native mobile app — it runs at a URL in any browser, desktop or phone. On phones the capture button opens the native camera; on desktop it opens a normal file picker. Same codebase, no separate mobile build.
 
-### 🌿 Organic Remedies First
-* Prioritizes natural and biological farming alternatives.
-* Saves up to 60% in traditional farm processing input capital.
-* Reduces chemical dependencies on small-scale crops.
+## Local development
 
-### 🖱️ Zero Literacy Friction
-* Built entirely around an accessible, visual user interface.
-* Eliminates heavy text and complex language barriers.
-* Engineered for a completely frictionless, two-click execution.
-
----
-
-## 🔮 Future Roadmap
-
-* **Hyperlocal Weather Nodes:** Integration of real-time climate streams to forecast community contamination and pest risks ahead of time.
-* **Edge Computing Portability:** Model quantization to allow core intelligence systems to run completely offline on low-power devices.
-
----
-
-## 🛠️ Project Architecture
-├── src/                 # Core application source code
-├── data/                 # Sample datasets and organic lookup matrices
-├── docs/                 # Product design blueprints and schematics
-├── README.md             # Project documentation
-└── requirements.txt      # Dependency configurations
-
----
-
-## 🚀 Quick Start Guide
-
-### Prerequisites
-* Python 3.8 or higher
-* Git
-
-### Installation
-1. Clone the current repository branch.
-2. Initialize the project environment.
-3. Install required core dependencies:
 ```bash
-pip install -r requirements.txt
-```
-4. Run the local development server:
-```bash
-python main.py
+npm install
+npm run dev
 ```
 
----
-*Developed for the HackMatrix 2026 Grand Finale Sprint.*
+## Before deploying
+
+1. In `vite.config.js`, set `base` to match your GitHub repo name exactly.
+2. In `src/App.jsx`, replace the `API_URL` placeholder with your real FastAPI Gateway URL.
+
+## Deploy to GitHub Pages
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/<your-username>/agrocure-ai.git
+git push -u origin main
+```
+
+Then on GitHub: **Settings → Pages → Build and deployment → Source → GitHub Actions**.
+
+The included workflow (`.github/workflows/deploy.yml`) builds and deploys automatically on every push to `main`. Your site goes live at:
+
+```
+https://<your-username>.github.io/agrocure-ai/
+```
